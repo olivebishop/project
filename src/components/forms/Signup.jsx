@@ -15,7 +15,6 @@ function Signup() {
           </div>
           <div>
             <TextField className='text' id="standard-basic" label='Email' variant='standard'></TextField>
-            <TextField className='text' id="standard-basic" label='Phone No.' variant='standard'></TextField>
           </div>
           <div>
             <TextField className='text pass' id="standard-basic" label='Password' variant='standard'></TextField>
