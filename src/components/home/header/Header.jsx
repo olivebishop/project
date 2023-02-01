@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import './Header.css'
+import signup from '../.././forms/Signup'
 import logo from '../../../assets/logo.png';
 import { AppBar,Tabs, Typography,Toolbar, Tab, Button,useMediaQuery,useTheme } from '@mui/material'
 // import Icon from '@mui/material'
@@ -42,7 +43,7 @@ return (
                         <Tab label="Contact" component={Link} to="/contacts"/>
                 </Tabs>
                         <Button sx={{marginLeft:'auto'}} variant='contained'component={Link} to="/login">Login</Button>
-                        <Button sx={{marginLeft:'10px'}} variant='contained'component={Link} to="/sign up">Sign up</Button>
+                        <Button sx={{marginLeft:'10px'}} variant='contained'component={Link} to="/signup">Sign up</Button>
                         </>
                 ) : (
                         /*-----tabs for md devices---*/

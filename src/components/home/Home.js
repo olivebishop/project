@@ -1,29 +1,18 @@
+import { AppBar, styled, Toolbar } from '@mui/material'
+import React from 'react'
 
-import Header from "./header/Header"
-import React, { useState, useEffect } from 'react';
-import Preloader from '../Preloader/Preloader';
-// import loader from '../../assets/loader.gif'
-
-
-function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 
-    
-    3000);
-
-  }, []);
-
+export default function Home() {
+    const MyToolbar=styled(Toolbar)({
+      display:'flex'
+    })
   return (
-    <div className="home">
-      {isLoading ? <Preloader /> :  <Header />}
-    </div>
-  );
+    <>
+         <AppBar>
+         <MyToolbar>
+            
+         </MyToolbar>
+         </AppBar>
+    </>
+
+  )
 }
-
-
-
-export default Home;
