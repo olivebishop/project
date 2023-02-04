@@ -1,18 +1,18 @@
-import { AppBar, styled, Toolbar } from '@mui/material'
+import { Button } from '@mui/material'
 import React from 'react'
 
-export default function Home() {
-    const MyToolbar=styled(Toolbar)({
-      display:'flex'
-    })
+function Home() {
   return (
-    <>
-         <AppBar>
-         <MyToolbar>
-            
-         </MyToolbar>
-         </AppBar>
-    </>
-
+    <div className='hero'>
+      <div className='hero-content'>
+      <h4>We Care For Workers Abroad</h4>
+      </div>
+      <div className='hero-img'>
+      
+      </div>
+      <Button>join us today</Button>
+    </div>
   )
 }
+
+export default Home

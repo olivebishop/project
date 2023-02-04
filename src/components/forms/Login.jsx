@@ -7,7 +7,7 @@ function Login() {
   return (
     <div className='signin'>
       <Card className='card'>
-        <h1>login Here</h1>
+        <h1>Sign In</h1>
         <CardContent>
           <div>
             <TextField className='text' id="standard-basic" label='Username' variant='standard'></TextField>

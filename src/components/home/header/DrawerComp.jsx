@@ -3,7 +3,7 @@ import { Drawer, IconButton, List, ListItemButton, ListItemIcon, ListItemText } 
 import MenuIcon from '@mui/icons-material/Menu';
 import { Link } from 'react-router-dom';
 
-const PAGES = ["Home", "About", "Services", "Contact", "Login", "Sign up"];
+const PAGES = ["Home", "About", "Services", "Contact", "Login", "Signup"];
 
 const DrawerComp = () => {
   const [OpenDrawer, setOpenDrawer] = useState(false);
