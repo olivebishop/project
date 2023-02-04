@@ -2,8 +2,10 @@ import React from 'react'
 
 function Contact() {
   return (
-    <div>Contact</div>
-  )
-}
-
+    <div>
+      <h1>Welcome to Contact</h1>
+      <p>This is the content for the Contact page.</p>
+    </div>
+  );
+};
 export default Contact

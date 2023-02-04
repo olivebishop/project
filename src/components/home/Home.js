@@ -1,18 +1,12 @@
-import { Button } from '@mui/material'
-import React from 'react'
+import React from 'react';
 
-function Home() {
+const Home = () => {
   return (
-    <div className='hero'>
-      <div className='hero-content'>
-      <h4>We Care For Workers Abroad</h4>
-      </div>
-      <div className='hero-img'>
-      
-      </div>
-      <Button>join us today</Button>
+    <div>
+      <h1>Welcome to Home</h1>
+      <p>This is the content for the Home page.</p>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

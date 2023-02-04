@@ -3,15 +3,17 @@ import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Signup from './forms/Signup';
+import Login from './forms/Login';
 import Header from "./home/header/Header";
 import Footer from './home/footer/Footer';
 import Preloader from './Preloader/Preloader';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Login from './forms/Login';
 import Contact from './contact/Contact';
-import { Home } from '@mui/icons-material';
+import Home from './home/Home';
 import About from './About';
 import Services from './services/Services';
+
+
 
 
 function App() {
@@ -37,6 +39,7 @@ function App() {
             <Route path="/contacts" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+          
           </Routes>
           <Footer />
         </BrowserRouter>

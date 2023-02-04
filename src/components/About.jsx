@@ -2,10 +2,11 @@ import React from 'react'
 
 function About() {
   return (
-    <div className='about'>
-      <h1>About us</h1>
+    <div>
+      <h1>Welcome to About</h1>
+      <p>This is the content for the about page.</p>
     </div>
-  )
-}
+  );
+};
 
 export default About
