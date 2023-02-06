@@ -40,7 +40,7 @@ return (
                         <Tab label="Home" component={Link} to="/"/>
                         <Tab label="About" component={Link} to="/about"/>
                         <Tab label="Services" component={Link} to="/services"/>
-                        <Tab label="Contact" component={Link} to="/contacts"/>
+                        <Tab label="Contact" component={Link} to="/contact"/>
                 </Tabs>
                         <Button sx={{marginLeft:'auto'}} variant='contained'component={Link} to="/login">Login</Button>
                         <Button sx={{marginLeft:'10px'}} variant='contained'component={Link} to="/signup">Sign up</Button>
@@ -53,7 +53,7 @@ return (
                         <Tab label="Home" component={Link} to="/"/>
                         <Tab label="About" component={Link} to="/about"/>
                         <Tab label="Services" component={Link} to="/services"/>
-                        <Tab label="Contact" component={Link} to="/contacts"/>
+                        <Tab label="Contact" component={Link} to="/contact"/>
                 </Tabs>
                 <Button sx={{marginLeft:'auto'}} variant='contained'component={Link} to="/login">Login</Button>
                         <Button sx={{marginLeft:'10px'}} variant='contained'component={Link} to="/signup">Sign up</Button>

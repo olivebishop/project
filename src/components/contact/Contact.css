@@ -1,33 +1,22 @@
-.contact{
+.contact {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: white;
-}
-.card {
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    padding-top: 40px;
-    box-shadow: 0px 0px 10px #ccc;
-    border-radius: 10px;
-    
-}
-
-@media (max-width: 767px) {
+  }
+  
+  .contact-img {
+    width: 50%;
+    height: auto;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-img {
+      display: none;
+    }
+  
     .card {
-    width: 90%;
+      width: 90%;
     }
-    .contact-img{
-        width: 90%;
-} 
-    }
-.contact-img{
-    height: 500px;
-
-}
+  }
+  

@@ -18,7 +18,7 @@ function Contact() {
             <TextField className='text' id="standard-basic" label='Email' variant='standard'></TextField>
           </div>
           <div>
-            <TextField className='text pass' id="standard-basic" label='Message' variant='standard'></TextField>
+            <TextField className='text mess' id="standard-basic" label='Message' variant='standard'></TextField>
           </div>
           <Button variant='outlined' className='btn'>Send Message</Button>         
         </CardContent>
