@@ -4,6 +4,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+
 function Footer() {
   return (
     <div className='footer'>
@@ -20,11 +21,11 @@ function Footer() {
         <div className='footer-col'>
           <h3>Follow Us</h3>
           <ul className='footer-social-icons'>
-            <li><a href="#"><InstagramIcon/></a></li>
-            <li><a href="#"><FacebookIcon/></a></li>
-            <li><a href="#"><TwitterIcon/></a></li>
-            <li><a href="#"><WhatsAppIcon/></a></li>
-           
+            <li><a href="https://www.instagram.com/rhymer_ke/"><InstagramIcon/></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=100079997930132"><FacebookIcon/></a></li>
+            <li><a href="https://twitter.com/olivebishop_dev"><TwitterIcon/></a></li>
+            <li><a href="https://wa.link/03biqi"><WhatsAppIcon/></a></li>
+          
           </ul>
         </div>
         <div className='footer-col'>
