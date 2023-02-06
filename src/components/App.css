@@ -7,7 +7,7 @@
         rgba(103, 101, 240, 1) 27%,
         rgba(141, 141, 235, 1) 85%
         );
-        --font-name: "Questrial", sans-serif;
+        --font-name: "Questrial", "Poppins" , sans-serif;
     
         /* 
             #9785f2
@@ -21,6 +21,7 @@
         }
         body{
             font-family: var(--font-name);
+         
 
         }
         section{

@@ -1,0 +1,22 @@
+.main-hero{
+    margin-top: 70px;
+    max-height: 100vh;
+    background-color: white;
+    color: #063970;
+}
+.hero-container{
+    display: flex;
+}
+.main-container-image{
+    height: 50%;
+    width: 60%;
+    margin: 10px 70%;
+}
+.left-container{
+   float: left;
+   margin-top: 40px;
+    
+}
+.left-container, h4{
+    line-height: 4em;
+}

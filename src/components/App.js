@@ -12,6 +12,7 @@ import Contact from './contact/Contact';
 import Home from './home/Home';
 import About from './About';
 import Services from './services/Services';
+import NotFound from '../NotFound';
 
 
 
@@ -39,7 +40,7 @@ function App() {
             <Route path="/contacts" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-          
+            <Route path='*' element={<NotFound />}/>
           </Routes>
           <Footer />
         </BrowserRouter>
