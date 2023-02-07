@@ -41,7 +41,7 @@ function Signup() {
             <TextField className='text pass' id="standard-basic" label='Password'
             value={password} onChange={e => setPassword(e.target.value)} type="password"
             autoComplete="current-password"
-             variant='standard'></TextField>
+            variant='standard'></TextField>
           </div>
           <div>
             <TextField className='text pass' id="standard-basic" label='Confirm Password' variant='standard'></TextField>
