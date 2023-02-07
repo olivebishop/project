@@ -10,7 +10,7 @@ import Preloader from './Preloader/Preloader';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Contact from './contact/Contact';
 import Home from './home/Home';
-import About from './About';
+import About from './about/About.jsx';
 import Services from './services/Services';
 import NotFound from '../NotFound';
 

@@ -2,3 +2,8 @@
     background-attachment: fixed;
     
 }
+.notfound ,h4{
+    margin-top: 50px;
+    text-align: center;
+  font-weight: 900;
+}
