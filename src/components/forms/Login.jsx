@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, Link, TextField } from '@mui/material';
+import { Button, Card, CardContent, Link, TextField, Avatar } from '@mui/material';
 import './Login.css';
 import { Link as RouterLink } from 'react-router-dom';
 import React from 'react'
@@ -7,6 +7,7 @@ function Login() {
   return (
     <div className='signin'>
       <Card className='card'>
+      <Avatar sx={{margin:'2px 0px'}}></Avatar> 
         <h1>Sign In</h1>
         <CardContent>
           <div>

@@ -7,3 +7,11 @@
     text-align: center;
   font-weight: 900;
 }
+@media (max-width: 768px) {
+  .notfound , img{
+    display: none;
+  }
+  .notfound{
+    margin-top: 100px;
+  }
+}

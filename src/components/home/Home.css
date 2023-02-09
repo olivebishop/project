@@ -3,9 +3,12 @@
     max-height: 100vh;
     background-color: white;
     color: #063970;
+    width: 100%;
 }
 .hero-container{
     display: flex;
+    justify-content: center;
+    text-align: center;
 }
 .main-container-image{
     height: 50%;
@@ -19,4 +22,9 @@
 }
 .left-container, h4{
     line-height: 4em;
+}
+@media (max-width: 768px) {
+    .main-container-image{
+        display: none;
+    }
 }
