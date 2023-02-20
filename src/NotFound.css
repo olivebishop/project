@@ -1,17 +1,35 @@
-.notfound{
-    background-attachment: fixed;
-    
+.notfound {
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  
 }
-.notfound ,h4{
-    margin-top: 50px;
-    text-align: center;
+
+.notfound h4 {
+  margin-top: 50px;
+  text-align: center;
   font-weight: 900;
+  font-size: 42px;
 }
+
+.notfound img {
+  margin-bottom:200px;
+  max-width: 100%;
+}
+
 @media (max-width: 768px) {
-  .notfound , img{
-    display: none;
+  .notfound h4 {
+    font-size: 30px;
   }
-  .notfound{
+  .notfound img {
+    max-width: 50%;
+    margin-bottom:60px;
+  }
+  .notfound {
     margin-top: 100px;
+   
   }
 }

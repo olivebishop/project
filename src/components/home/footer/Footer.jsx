@@ -4,11 +4,18 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import logo from '../../.././assets/logo.png';
 
 function Footer() {
   return (
     <div className='footer'>
       <div className='footer-links'>
+        <div className='footer-col'>
+          <h3>Mfanyikazi Abroad</h3>
+          <ul className='footer-img'>
+          <img src={logo} alt='logo'></img>
+          </ul>
+        </div>
         <div className='footer-col'>
           <h3>Quick Links</h3>
           <ul>

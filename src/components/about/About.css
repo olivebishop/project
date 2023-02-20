@@ -1,67 +1,96 @@
 .about-container {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 70px;
-  }
-  
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5vw;
+}
+
+.about-text {
+  flex-basis: 100%;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.about-text h1 {
+  margin-bottom: 1rem;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+}
+
+.about-image {
+  flex-basis: 100%;
+  text-align: center;
+}
+
+.about-image img {
+  width: 80%;
+  max-width: 400px;
+  height: auto;
+  margin: 2rem auto;
+  border-radius: 5px;
+}
+
+@media (min-width: 768px) {
   .about-text {
-    flex-basis: 100%;
-    padding: 1rem;
-    text-align: center;
-    margin-top: 40px;
+    flex-basis: 50%;
+    padding: 2rem;
+    text-align: left;
   }
-  
+
   .about-text h1 {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
-  
+
   .about-text p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
-  
+
   .about-image {
-    flex-basis: 100%;
+    flex-basis: 50%;
     text-align: center;
   }
-  
+
   .about-image img {
-    width: 80%;
-    max-width: 400px;
+    width: 60%;
+    max-width: 600px;
     height: auto;
-    margin: 2rem auto;
-    border-radius: 5px;
+    margin: 4rem auto;
   }
-  
-  @media (min-width: 768px) {
-    .about-text {
-      flex-basis: 50%;
-      padding: 2rem;
-      text-align: left;
-    }
-  
-    .about-text h1 {
-      margin-bottom: 1.5rem;
-    }
-  
-    .about-text p {
-      font-size: 1.4rem;
-    }
-  
-    .about-image {
-      flex-basis: 50%;
-      text-align: center;
-    }
-  
-    .about-image img {
-      width: 60%;
-      max-width: 600px;
-      height: auto;
-      margin: 4rem auto;
-    }
+}
+
+.about-text h5 {
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.faq-container {
+  background-color: grey;
+  padding: 5vw;
+  margin-top: 5vh;
+  width: 100%;
+}
+
+.faq-question {
+  margin-bottom: 5vh;
+}
+
+.faq-question h3 {
+  margin-bottom: 2vh;
+}
+
+@media (min-width: 768px) {
+  .faq-container {
+    padding: 3vw;
   }
-  
-  .about-text h5 {
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-    font-weight: 600;
+
+  .faq-question {
+    margin-bottom: 3vh;
   }
+
+  .faq-question h3 {
+    margin-bottom: 1.5vh;
+  }
+}

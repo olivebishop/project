@@ -6,6 +6,7 @@ import axios from 'axios';
 
 
 
+
 function Signup() {
   const [Username,setUsername]= useState('');
   const [Fullname,setFullname]= useState('');
@@ -25,7 +26,7 @@ function Signup() {
     try {
       const response = await axios.post('http://localhost:5000/users', user);
       setSignupSuccess(true);
-      //console.log(response);
+      console.log(response);
     } catch (error) {
       console.log(error);
     }

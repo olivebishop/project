@@ -1,66 +1,90 @@
 .signup {
-    background-color: #063970;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background-color: #063970;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 20px;
+}
+
+.card {
+  max-width: 500px;
+  width: 100%;
+  max-height: 500px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  padding-top: 40px;
+  box-shadow: 0px 0px 10px #ccc;
+  border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+  .card {
+    max-width: 90%;
+    height: auto;
+    padding: 20px;
+    padding-top: 30px;
+  }
+
+  .card h1 {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .pass {
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    font-size: 16px;
     margin-top: 20px;
   }
-  
-  .card {
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    padding-top: 40px;
-    box-shadow: 0px 0px 10px #ccc;
-    border-radius: 10px;
-  }
-  
-  @media (max-width: 767px) {
-    .card {
-      width: 90%;
-    }
-  }
-  
-  .card h1 {
-    font-size: 36px;
-    color: #063970;
-    margin-bottom: 30px;
-  }
-  
-  .text {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-  
-  .pass {
-    margin-bottom: 60px;
-  }
-  
-  .btn {
-    background-color: #063970;
-    color: white;
-    width: 100%;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 20px;
-    margin-top: 30px;
-  }
-  
-  .btn:hover {
-    background-color: white;
-    color: #063970;
-    cursor: pointer;
-  }
-  
-  h6 a {
-    color: #063970;
-    text-decoration: none;
-  }
-  .signup-success{
-    color: green;
-  }
+}
+
+.card h1 {
+  font-size: 36px;
+  color: #063970;
+  margin-bottom: 30px;
+}
+
+.text {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.pass {
+  margin-bottom: 60px;
+}
+
+.btn {
+  background-color: #063970;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #063970;
+  cursor: pointer;
+}
+
+h6 a {
+  color: #063970;
+  text-decoration: none;
+}
+
+.signup-success{
+  color: green;
+}
