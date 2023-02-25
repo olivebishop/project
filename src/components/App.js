@@ -13,7 +13,7 @@ import Home from './home/Home';
 import About from './about/About.jsx';
 import Services from './services/Services';
 import NotFound from '../NotFound';
-import Dashboard from './dashboard/Dashboard';
+
 
 
 
@@ -36,6 +36,7 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
@@ -44,7 +45,6 @@ function App() {
             <Route path='*' element={<NotFound />}/>
           </Routes>
           <Footer />
-        
         </BrowserRouter>
       )}
     </div>

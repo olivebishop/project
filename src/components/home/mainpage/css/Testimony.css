@@ -1,0 +1,64 @@
+#testimony {
+    padding: 100px 0;
+  }
+  
+  #testimony h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+  
+  .card {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin-bottom: 30px;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  
+  .card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .card h5 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .card {
+      text-align: center;
+    }
+  
+    .card img {
+      max-width: 200px;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    #testimony h2 {
+      font-size: 28px;
+    }
+  
+    .card p {
+      font-size: 14px;
+    }
+  
+    .card h5 {
+      font-size: 18px;
+    }
+  }
+  
