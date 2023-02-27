@@ -1,5 +1,6 @@
 import React from "react";
 import ".././mainpage/css/Testimony.css";
+import testimonial from '../../.././assets/testimonial.jpg'
 
 const Testimony = () => {
   return (
@@ -9,7 +10,7 @@ const Testimony = () => {
         <div className="row">
           <div className="col-md-4">
             <div className="card">
-              <img src="https://via.placeholder.com/150" alt="Testimonial" />
+            <img src={testimonial} alt="a" />
               <p>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 euismod mauris vitae tellus feugiat, nec bibendum justo
@@ -20,7 +21,7 @@ const Testimony = () => {
           </div>
           <div className="col-md-4">
             <div className="card">
-              <img src="https://via.placeholder.com/150" alt="Testimonial" />
+            <img src={testimonial} alt="a" />
               <p>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 euismod mauris vitae tellus feugiat, nec bibendum justo
@@ -31,7 +32,7 @@ const Testimony = () => {
           </div>
           <div className="col-md-4">
             <div className="card">
-              <img src="https://via.placeholder.com/150" alt="Testimonial" />
+            <img src={testimonial} alt="a" />
               <p>
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                 euismod mauris vitae tellus feugiat, nec bibendum justo

@@ -1,5 +1,6 @@
 import React from "react";
 import '../mainpage/css/HowItWorks.css';
+import one from "../../.././assets/one.png";
 
 const HowItWorks = () => {
   return (
@@ -8,21 +9,21 @@ const HowItWorks = () => {
       <div className="how-it-works-grid">
         <div className="step">
           <div className="step-image">
-            <img src="/img/step1.png" alt="Step 1" />
+          <img src={one} alt="one" />
           </div>
           <h3>Step 1</h3>
           <p>Sign up for an account and choose your subscription plan.</p>
         </div>
         <div className="step">
           <div className="step-image">
-            <img src="/img/step2.png" alt="Step 2" />
+          <img src={one} alt="one" />
           </div>
           <h3>Step 2</h3>
           <p>Upload your products and set up your online store.</p>
         </div>
         <div className="step">
           <div className="step-image">
-            <img src="/img/step3.png" alt="Step 3" />
+          <img src={one} alt="one" />
           </div>
           <h3>Step 3</h3>
           <p>Start selling your products and manage your orders.</p>

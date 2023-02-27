@@ -1,5 +1,8 @@
 import React from "react";
 import "../mainpage/css/Partnerships.css";
+import a from '../../../assets/a.png';
+import b from '../../../assets/b.jpg';
+import c from '../../../assets/c.png'
 
 const Partnerships = () => {
   return (
@@ -8,13 +11,13 @@ const Partnerships = () => {
         <h2>Our Partnerships</h2>
         <div className="partnerships-grid">
           <div className="partnership">
-            <img src="./images/partner1.png" alt="Partner 1" />
+          <img src={a} alt="a" />
           </div>
           <div className="partnership">
-            <img src="./images/partner2.png" alt="Partner 2" />
+          <img src={b} alt="b" />
           </div>
           <div className="partnership">
-            <img src="./images/partner3.png" alt="Partner 3" />
+          <img src={c} alt="c" />
           </div>
         </div>
       </div>
