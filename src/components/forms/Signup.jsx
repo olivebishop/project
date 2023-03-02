@@ -1,84 +1,89 @@
-import { Avatar, Button, Card, CardContent, Link, TextField } from '@mui/material';
+import { Button, Card, CardContent, Link, TextField, Avatar } from '@mui/material';
 import './Signup.css';
 import { Link as RouterLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-
-
-
-function Signup() {
-  const [Username,setUsername]= useState('');
-  const [Fullname,setFullname]= useState('');
-  const [email, setEmail]= useState('');
-  const [password, setPassword]= useState('');
-  const [signupSuccess, setSignupSuccess] = useState(false);
+function SignUp() {
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
 
   const signup = async (e) => {
     e.preventDefault();
-    // console.log(`${username}  ${email}  ${password}`);
     const user = {
-      fullname: Fullname,
-      username: Username,
+      username: username,
       email: email,
       password: password
-    }
+    };
     try {
       const response = await axios.post('http://localhost:5000/users', user);
-      setSignupSuccess(true);
+      toast.success('Signed up successfully!', {
+        position: 'bottom-center', // set the position to bottom left
+       } );
       console.log(response);
     } catch (error) {
       console.log(error);
+      toast.error('Sign up failed!');
     }
-  }
+  };
 
   return (
-    <div className='signup'>
-      <Card className='card'>
-       <Avatar sx={{margin:'2px 0px'}}></Avatar> 
+    <div className="signup">
+      <Card className="card">
+        <Avatar sx={{ margin: '2px 0px' }} />
         <h1>Sign Up</h1>
         <CardContent>
-        {signupSuccess && (
-            <div className='signup-success'>
-              Signed up successfully!
-            </div>
-          )}
           <div>
-            <TextField className='text' id="standard-basic" label='Fullname'
-             value={Fullname} onChange={e => setFullname(e.target.value)} type="text"
-             defaultValue="Username"
-             variant='standard'></TextField>
+            <TextField
+              className="text"
+              id="standard-basic"
+              label="Username"
+              variant="standard"
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+            />
+          </div>
+          <div>
+            <TextField
+              className="text"
+              id="standard-basic"
+              label="Email"
+              variant="standard"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </div>
+          <div>
+            <TextField
+              className="text pass"
+              id="standard-basic"
+              label="Password"
+              variant="standard"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+            />
+          </div>
 
-            <TextField className='text' id="standard-basic" label='Username' 
-              value={Username} onChange={e => setUsername(e.target.value)} type="text"
-              defaultValue="Username"
-    
-            variant='standard'></TextField>
-          </div>
+          <Button variant="outlined" className="btn" onClick={signup}>
+            Sign Up
+          </Button>
           <div>
-            <TextField className='text' id="standard-basic" label='Email'
-               value={email}onChange={e => setEmail(e.target.value)} type="text"
-               defaultValue="Email"
-     
-             variant='standard'></TextField>
-          </div>
-          <div>
-            <TextField className='text pass' id="standard-basic" label='Password'
-            value={password} onChange={e => setPassword(e.target.value)} type="password"
-            autoComplete="current-password"
-            variant='standard'></TextField>
-          </div>
-          <div>
-            <TextField className='text pass' id="standard-basic" label='Confirm Password' variant='standard'></TextField>
-          </div>
-          <Button variant='outlined' className='btn' onClick={signup}>Register</Button>
-          <div>          
-          <h6>Have an account?<Link component={RouterLink} to='/login'>Login here</Link></h6>
+            <h6>
+              Already have an account?
+              <Link component={RouterLink} to="/login">
+                Sign in here
+              </Link>
+            </h6>
           </div>
         </CardContent>
       </Card>
+      <ToastContainer autoClose={3000} />
     </div>
-  )
+  );
 }
 
-export default Signup;
+export default SignUp;

@@ -3,13 +3,14 @@ import './Login.css';
 import { Link as RouterLink } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Login() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [signinSuccess, setSigninSuccess] = useState(false);
-
   const signin = async (e) => {
     e.preventDefault();
     const user = {
@@ -19,7 +20,9 @@ function Login() {
     };
     try {
       const response = await axios.get('http://localhost:5000/users', user);
-      setSigninSuccess(true);
+      toast.success('Signed in successfully!', {
+        position: 'bottom-center', // set the position to bottom left
+       } );
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -32,11 +35,6 @@ function Login() {
         <Avatar sx={{ margin: '2px 0px' }} />
         <h1>Sign In</h1>
         <CardContent>
-        {signinSuccess && (
-            <div className='signin-success'>
-              Signed in successfully!
-            </div>
-          )}
           <div>
             <TextField
               className="text"
@@ -81,6 +79,7 @@ function Login() {
           </div>
         </CardContent>
       </Card>
+      <ToastContainer autoClose={3000} />
     </div>
   );
 }
