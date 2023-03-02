@@ -22,10 +22,11 @@ function Login() {
       const response = await axios.get('http://localhost:5000/users', user);
       toast.success('Signed in successfully!', {
         position: 'bottom-center', // set the position to bottom left
-       } );
+       });
       console.log(response);
     } catch (error) {
       console.log(error);
+      toast.error('Sign in failed!');
     }
   };
 

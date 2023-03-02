@@ -7,6 +7,7 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function SignUp() {
+  const [fullname, setFullname] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,6 +16,7 @@ function SignUp() {
   const signup = async (e) => {
     e.preventDefault();
     const user = {
+      fullname: fullname,
       username: username,
       email: email,
       password: password
@@ -23,7 +25,7 @@ function SignUp() {
       const response = await axios.post('http://localhost:5000/users', user);
       toast.success('Signed up successfully!', {
         position: 'bottom-center', // set the position to bottom left
-       } );
+       });
       console.log(response);
     } catch (error) {
       console.log(error);
@@ -37,6 +39,16 @@ function SignUp() {
         <Avatar sx={{ margin: '2px 0px' }} />
         <h1>Sign Up</h1>
         <CardContent>
+          <div>
+            <TextField
+              className="text"
+              id="standard-basic"
+              label="Fullname"
+              variant="standard"
+              value={fullname}
+              onChange={e => setFullname(e.target.value)}
+            />
+          </div>
           <div>
             <TextField
               className="text"
