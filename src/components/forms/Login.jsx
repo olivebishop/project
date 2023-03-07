@@ -6,24 +6,36 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 function Login() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
   const signin = async (e) => {
     e.preventDefault();
-    const user = {
-      username: username,
-      email: email,
-      password: password
-    };
+
     try {
-      const response = await axios.get('http://localhost:5000/users', user);
+      // Fetch user from API by email or username
+      const response = await axios.get(`http://localhost:5000/users?email=${email}&username=${username}`);
+
+      if (response.data.length === 0) {
+        toast.error('Invalid email/username!');
+        return;
+      }
+
+      const user = response.data[0];
+
+      // Check if password is correct
+      if (user.password !== password) {
+        toast.error('Invalid password!');
+        return;
+      }
+
       toast.success('Signed in successfully!', {
-        position: 'bottom-center', // set the position to bottom left
-       });
-      console.log(response);
+        position: 'bottom-center',
+      });
+
+      // TODO: Set user session or redirect to dashboard
     } catch (error) {
       console.log(error);
       toast.error('Sign in failed!');

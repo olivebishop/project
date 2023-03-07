@@ -11,10 +11,37 @@ function SignUp() {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const validateForm = () => {
+    let isValid = true;
+    if (!fullname.trim()) {
+      toast.error('Please enter your full name.');
+      isValid = false;
+    }
+    if (!username.trim()) {
+      toast.error('Please enter a username.');
+      isValid = false;
+    }
+    if (!email.trim() || !email.includes('@')) {
+      toast.error('Please enter a valid email address.');
+      isValid = false;
+    }
+    if (!password.trim()) {
+      toast.error('Please enter a password.');
+      isValid = false;
+    } else if (password !== confirmPassword) {
+      toast.error('Passwords do not match.');
+      isValid = false;
+    }
+    return isValid;
+  };
 
   const signup = async (e) => {
     e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
     const user = {
       fullname: fullname,
       username: username,
@@ -36,7 +63,7 @@ function SignUp() {
   return (
     <div className="signup">
       <Card className="card">
-        <Avatar sx={{ margin: '2px 0px' }} />
+        <Avatar sx={{ margin: '1px 0px' }} />
         <h1>Sign Up</h1>
         <CardContent>
           <div>
@@ -75,11 +102,22 @@ function SignUp() {
               id="standard-basic"
               label="Password"
               variant="standard"
+              type="password"
               value={password}
               onChange={e => setPassword(e.target.value)}
             />
           </div>
-
+          <div>
+            <TextField
+              className="text pass"
+              id="standard-basic"
+              label="Confirm Password"
+              variant="standard"
+              type="password"
+              value={confirmPassword}
+              onChange={e => setConfirmPassword(e.target.value)}
+            />
+          </div>
           <Button variant="outlined" className="btn" onClick={signup}>
             Sign Up
           </Button>
