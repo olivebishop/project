@@ -39,6 +39,7 @@ function SignUp() {
 
   const signup = async (e) => {
     e.preventDefault();
+    console.log("Test signup");
     if (!validateForm()) {
       return;
     }
@@ -49,7 +50,8 @@ function SignUp() {
       password: password
     };
     try {
-      const response = await axios.post('http://localhost:5000/users', user);
+      const response = await axios.post('http://localhost:9000/api/v1/signup', user);
+      console.log(`${fullname} ${username} ${email} ${password}`);
       toast.success('Signed up successfully!', {
         position: 'bottom-center', // set the position to bottom left
        });
