@@ -45,6 +45,7 @@ function Login() {
               className="text pass"
               id="standard-basic"
               label="Password"
+              type="password"
               variant="standard"
               value={password}
               onChange={e => setPassword(e.target.value)}
