@@ -13,6 +13,8 @@ import Home from './home/Home';
 import About from './about/About.jsx';
 import Services from './services/Services';
 import NotFound from '../NotFound';
+import Dashboard from './dashboard/Dashboard';
+
 
 
 
@@ -42,6 +44,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard/>} />
             <Route path='*' element={<NotFound />}/>
           </Routes>
           <Footer />

@@ -1,17 +1,22 @@
 import { Button, Card, CardContent, Link, TextField, Avatar } from '@mui/material';
 import './Signup.css';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
+
 function SignUp() {
+
+  const navigate = useNavigate();
   const [fullname, setFullname] = useState('');
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+ 
 
   const validateForm = () => {
     let isValid = true;
@@ -53,14 +58,16 @@ function SignUp() {
       const response = await axios.post('http://localhost:9000/api/v1/signup', user);
       console.log(`${fullname} ${username} ${email} ${password}`);
       toast.success('Signed up successfully!', {
-        position: 'bottom-center', // set the position to bottom left
-       });
-      console.log(response);
+        position: 'bottom-center',
+      });
+      setTimeout(() => {
+        navigate('/login');
+      }, 3000);
     } catch (error) {
       console.log(error);
       toast.error('Sign up failed!');
     }
-  };
+  }
 
   return (
     <div className="signup">
@@ -133,7 +140,8 @@ function SignUp() {
           </div>
         </CardContent>
       </Card>
-      <ToastContainer autoClose={3000} />
+     <ToastContainer autoClose={3000} />
+
     </div>
   );
 }
