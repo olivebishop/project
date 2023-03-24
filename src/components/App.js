@@ -16,12 +16,15 @@ import NotFound from '../NotFound';
 import Dashboard from './dashboard/Dashboard';
 
 
-
-
-
-
 function App() {
   const [isLoading, setIsLoading] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [authToken, setAuthToken] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    setAuthToken(token);
+  }, [isLoggedIn]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,7 +38,7 @@ function App() {
         <Preloader />
       ) : (
         <BrowserRouter>
-          <Header />
+          {!authToken && <Header />}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
@@ -44,7 +47,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/dashboard" element={<Dashboard/>} />
+            <Route path="/dashboard" element={<Dashboard loginStatus={{isLoggedIn, setIsLoggedIn}}/>} />
             <Route path='*' element={<NotFound />}/>
           </Routes>
           <Footer />
@@ -55,4 +58,3 @@ function App() {
 }
 
 export default App;
-

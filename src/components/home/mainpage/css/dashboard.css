@@ -2,3 +2,8 @@
     padding: 100px;
     text-align:center;
 }
+.dashboard,button{
+    display: flex;
+    align-items: center;
+    margin-top: 90px;
+}

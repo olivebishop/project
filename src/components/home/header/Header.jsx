@@ -17,7 +17,7 @@ const Header = () => {
         //elevation is shadow in appbar and 5 its teh unit
 return (
         <React.Fragment>
-        <AppBar sx={{background:'#063970'}}elevation={5}> 
+        <AppBar sx={{background:'#063970'}} position='fixed'> 
                 <Toolbar> 
                         {
                         isMatch ? (

@@ -1,12 +1,12 @@
 import { Button, Card, CardContent, Link, TextField, Avatar } from '@mui/material';
 import './Login.css';
-import { Link as RouterLink, Navigate, useNavigate} from 'react-router-dom';
+import { Link as RouterLink,  useNavigate} from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function Login() {
+function Login(props) {
 
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
@@ -17,6 +17,8 @@ function Login() {
 
     try {
       const response = await axios.post('http://localhost:9000/api/v1/login', {username: username, password: password});
+      const {token} = response.data;
+      localStorage.setItem('authToken', token);
       console.log(`The status is: ${response.status}`);
       navigate('/dashboard');
     } catch (error) {
