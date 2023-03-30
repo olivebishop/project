@@ -20,10 +20,15 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [authToken, setAuthToken] = useState(false);
+  const [showFooter, setShowFooter] = useState(false);
 
   useEffect(() => {
     const token = localStorage.getItem('authToken');
     setAuthToken(token);
+  }, [isLoggedIn]);
+
+  useEffect(() => {
+    setShowFooter(!isLoggedIn);
   }, [isLoggedIn]);
 
   useEffect(() => {
@@ -50,7 +55,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard loginStatus={{isLoggedIn, setIsLoggedIn}}/>} />
             <Route path='*' element={<NotFound />}/>
           </Routes>
-          <Footer />
+          {showFooter && <Footer />}
         </BrowserRouter>
       )}
     </div>
