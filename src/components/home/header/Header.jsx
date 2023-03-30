@@ -26,7 +26,7 @@ return (
                 <img className='img-logo' src={logo} alt=""/>
                 </Typography> 
                 <DrawerComp/>
-              
+        
                 </> 
                 ) :(
                         /*---------large screen queries and tabs------------------------------------*/
@@ -44,7 +44,7 @@ return (
                         <Tab label="About" component={Link} to="/about"/>
                         <Tab label="Services" component={Link} to="/services"/>
                         <Tab label="Contact" component={Link} to="/contact"/>
-                      
+                
                         
                 </Tabs>
                         <Button sx={{marginLeft:'auto'}} variant='contained'component={Link} to="/login">Login</Button>

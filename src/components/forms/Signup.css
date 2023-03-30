@@ -85,3 +85,9 @@ h6 a:hover {
     box-shadow: none;
   }
 }
+@media (max-width: 767px) {
+  .signup {
+    padding: 20px;
+
+}
+}
