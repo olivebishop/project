@@ -1,105 +1,93 @@
-import React, {useEffect, useState} from 'react'
+import React, { useEffect, useState } from 'react';
 import logo from '../../assets/logo.png';
-import { AppBar,Tabs, Typography,Toolbar, Tab, Button,useMediaQuery,useTheme } from '@mui/material';
+import {
+  AppBar,
+  Typography,
+  Toolbar,
+  Button,
+  IconButton,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import '../../.././src/components/home/mainpage/css/dashboard.css';
 import { useNavigate } from 'react-router-dom';
-// import Icon from '@mui/material'
-import DrawerComp from '../../.././src/components/home/header/DrawerComp';
 import { Link } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+//import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
+import EmailIcon from '@mui/icons-material/Email';
 /*--------------------------media queries----------*/
 
-
-
-
 const Header = (props) => {
-        const [value, setValue] = useState();
-        const theme = useTheme();
-        const isMatch = useMediaQuery(theme.breakpoints.down('md'));
-        const isMatchLg = useMediaQuery(theme.breakpoints.up('lg'));
-        const [isLoggedOut, setIsLoggedOut] = useState(true);
-        const [authToken, setAuthToken] = useState(false);
-        const navigate = useNavigate();
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down('md'));
+  const [isLoggedOut, setIsLoggedOut] = useState(true);
+  const [authToken, setAuthToken] = useState(false);
+  const navigate = useNavigate();
 
-        const setIsLoggedIn = props.loginStatus.setIsLoggedIn;
+  const setIsLoggedIn = props.loginStatus.setIsLoggedIn;
 
+  useEffect(() => {
+    const token = localStorage.getItem('authToken');
+    setAuthToken(token);
+    if (!token) {
+      navigate('/login');
+    }
+    setIsLoggedIn(true);
+  }, [setAuthToken, navigate, setIsLoggedIn]);
 
-        useEffect(() => {
-                const token = localStorage.getItem('authToken');
-                setAuthToken(token);
-                if(!token) {
-                        navigate('/login');
-                }
-                setIsLoggedIn(true);
-        }, [setAuthToken, navigate, setIsLoggedIn])
+  const handleLogout = async () => {
+    // perform logout logic
+    localStorage.removeItem('authToken');
+    navigate('/login');
+    setIsLoggedIn(false);
+    setIsLoggedOut(false);
+  };
 
-        const handleLogout = async () => {
-            // perform logout logic
-            localStorage.removeItem("authToken");
-            navigate("/login");
-            setIsLoggedIn(false);
-            setIsLoggedOut(false);
-          };
-       
-      //elevation is shadow in appbar and 5 its teh unit
-return (
-        <React.Fragment>
-        <AppBar sx={{background:'#063970', mt:0}}  position='fixed'> 
-                <Toolbar> 
-                        {
-                        isMatch ? (
-                <>
+  //elevation is shadow in appbar and 5 its the unit
+  return (
+    <React.Fragment>
+      <AppBar sx={{ background: '#063970', mt: 0 }} position="fixed">
+        <Toolbar sx={{ justifyContent: 'space-between' }}>
+          <div sx={{ display: 'flex', alignItems: 'center' }}>
+            {isMatch ? (
+              <>
+                <IconButton>
+                  <MenuIcon sx={{ color: 'white' }} />
+                </IconButton>
                 <Typography>
-                <img className='img-logo' src={logo} alt=""/>
-                </Typography> 
-                <DrawerComp/>
-                </> 
-                ) :(
-                        /*---------large screen queries and tabs------------------------------------*/
-                isMatchLg ? (
-                <>
-                        <Typography>
-                        <img className='img-logo' src={logo} alt=""/>
-                        </Typography>
-                        <Tabs sx={{marginLeft:'auto'}}
-                textColor='inherit' value={value} onChange={(e,value)=>setValue(value) } indicatorColor='secondary'>
-                        {
-                                
-                        }
-                        <Tab label="Users" component={Link} to="/"/>
-                        <Tab label="Countries" component={Link} to="/about"/>
-                        <Tab label="Jobs" component={Link} to="/services"/>
-                        <Tab label="Help" component={Link} to="/contact"/>
-                      
-                        
-                </Tabs> 
-                <Button sx={{ marginLeft: "auto" }}  variant="contained"  onClick={handleLogout}>Logout</Button>
-                    
-                        </>
-                ) : (
-                        /*-----tabs for md devices---*/
-                                <>
-                        <Tabs 
-                textColor='inherit' value={value} onChange={(e,value)=>setValue(value) } indicatorColor='secondary'>
-                        {
-                                
-                        }
-                         <Tab label="Users" component={Link} to="/"/>
-                        <Tab label="Countries" component={Link} to="/about"/>
-                        <Tab label="Jobs" component={Link} to="/services"/>
-                        <Tab label="Help" component={Link} to="/contact"/>
-                </Tabs> 
-                <Button sx={{ marginLeft: "auto" }}  variant="contained"  onClick={handleLogout}>Logout</Button>
-                    
-                        </>
-                )
-                )             
-                        }
-                </Toolbar>
-                </AppBar>
-        </React.Fragment>
-        
-
-)
-}
+                  <img className="img-logo" src={logo} alt="" />
+                </Typography>
+              </>
+            ) : (
+              <Typography>
+                <img className="img-logo" src={logo} alt="" />
+              </Typography>
+            )}
+          </div>
+          <div className="search-container" sx={{ display: 'flex', alignItems: 'center' }}>
+            <input sx={{ width: '100%', background: 'transparent', color: 'white', border: 'none', fontSize: '16px' }} placeholder="Search" />
+            <IconButton sx={{ color: 'white' }}>
+              <SearchIcon />
+            </IconButton>
+          </div>
+          <div className="header-icons">
+            <IconButton sx={{ color: 'white' }}>
+              <NotificationsIcon />
+            </IconButton>
+            <IconButton sx={{ color: 'white' }}>
+            <EmailIcon />
+            </IconButton>
+            <IconButton sx={{ color: 'white' }}>
+              <PowerSettingsNewIcon onClick={handleLogout} />
+            </IconButton>
+          </div>
+        </Toolbar>
+      </AppBar>
+    </React.Fragment>
+  );
+};
 
 export default Header;
