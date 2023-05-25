@@ -55,7 +55,7 @@ function SignUp() {
       password: password
     };
     try {
-      const response = await axios.post('https://second-cuboid-pick.glitch.me/api/v1/signup', user);
+      const response = await axios.post('http://localhost:9000/api/v1/signup', user);
       console.log(`${fullname} ${username} ${email} ${password}`);
       toast.success('Signed up successfully!', {
         position: 'bottom-center',
